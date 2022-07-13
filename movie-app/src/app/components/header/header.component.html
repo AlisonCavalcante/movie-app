@@ -1,1 +1,15 @@
-<p>header works!</p>
+<div class="navbar">
+  <div>
+    <a>Logo</a>
+  </div>
+  <div>
+    <button *ngIf="!lightTheme" (click)="changeTheme()">
+      <p>Light</p>
+      <img src="../../../assets/imgs/icon-sun.svg">
+    </button>
+    <button *ngIf="lightTheme" (click)="changeTheme()">
+      <p>Dark</p>
+      <img src="../../../assets/imgs/icon-moon.svg">
+    </button>
+  </div>
+</div>

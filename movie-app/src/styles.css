@@ -5,6 +5,10 @@ body {
   --lm-text: white;
 }
 
+body.light-theme{
+  --bg-content: #f6f8ff;
+  --lm-text: #4b6a9b;
+}
 
 body {
   margin: 0;
@@ -13,4 +17,5 @@ body {
   height: 100vh;
   background-color: var(--bg-content);
   color: var(--lm-text);
+  font-family: "Space Mono", monospace;
 }

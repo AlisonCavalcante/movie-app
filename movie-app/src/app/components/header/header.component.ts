@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  lightTheme: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeTheme() {
+    this.lightTheme = !this.lightTheme;
+    document.body.classList.toggle('light-theme');
   }
 
 }
