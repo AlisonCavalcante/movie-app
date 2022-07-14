@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { IMovie } from './../../shared/models/Movie';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card-filme',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-filme.component.css']
 })
 export class CardFilmeComponent implements OnInit {
+
+  @Input() public movie!: IMovie;
 
   constructor() { }
 

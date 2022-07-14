@@ -1,4 +1,4 @@
-<section class="filmes">
-  <app-card-filme>
+<section class="content-filmes">
+  <app-card-filme *ngFor="let movie of listMovies" [movie]="movie">
   </app-card-filme>
 </section>

@@ -1,4 +1,16 @@
 .movie-card {
-  width: 200px;
   border-radius: 12px;
+  cursor: pointer;
+  margin: 10px;
+  width: 200px;
+  transition: 0.3s ease-in-out;
+}
+
+.movie-card__header img {
+  width: 100%;
+}
+
+
+.movie-card:hover {
+  transform: scale(1.1)
 }

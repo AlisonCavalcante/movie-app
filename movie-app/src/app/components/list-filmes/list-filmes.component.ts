@@ -1,3 +1,5 @@
+import { IMovie } from './../../shared/models/Movie';
+import { MovieService } from './../../services/movie.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListFilmesComponent implements OnInit {
 
-  constructor() { }
+  listMovies!: IMovie[];
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
+    this.getUpcomingMovies();
+  }
+
+  getUpcomingMovies() {
+    this.movieService.getUpcomingMovies().subscribe(res => {
+      this.listMovies = res.results;
+      console.log(this.listMovies)
+    });
   }
 
 }
