@@ -10,6 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class ListFilmesComponent implements OnInit {
 
   listMovies!: IMovie[];
+  page = 1;
+  count = 0;
+  pageSize = 20;
+
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
@@ -17,10 +21,16 @@ export class ListFilmesComponent implements OnInit {
   }
 
   getUpcomingMovies() {
-    this.movieService.getUpcomingMovies().subscribe(res => {
+    this.movieService.getUpcomingMovies(this.page).subscribe(res => {
       this.listMovies = res.results;
+      this.count = res.total_results;
       console.log(this.listMovies)
     });
+  }
+
+  handlePageChange(event: number) {
+    this.page = event;
+    this.getUpcomingMovies();
   }
 
 }

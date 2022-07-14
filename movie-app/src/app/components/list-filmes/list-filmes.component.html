@@ -1,4 +1,9 @@
 <section class="content-filmes">
-  <app-card-filme *ngFor="let movie of listMovies" [movie]="movie">
+  <app-card-filme *ngFor="let movie of listMovies | paginate: {itemsPerPage: pageSize, currentPage: page, totalItems: count}" [movie]="movie">
   </app-card-filme>
+  <div class="content-pagination">
+    <div class="pagination" style="width: 50%; background-color: white; border-radius: 30px; font-size: 20px;">
+      <pagination-controls [responsive]="true" (pageChange)="handlePageChange($event)" style="background-color: #f6f8ff; white-space: nowrap;"></pagination-controls>
+    </div>
+  </div>
 </section>

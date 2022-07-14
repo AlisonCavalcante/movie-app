@@ -11,8 +11,8 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  getUpcomingMovies(): Observable<any>{
-    return this.http.get<any>(Constantes.URL_BASE + 'upcoming?api_key=' + Constantes.API_KEY);
+  getUpcomingMovies(page: number): Observable<any>{
+    return this.http.get<any>(Constantes.URL_BASE + 'upcoming?api_key=' + Constantes.API_KEY + `&page=${page}`);
   }
 
 }
