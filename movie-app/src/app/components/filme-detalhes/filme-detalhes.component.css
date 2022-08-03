@@ -1,13 +1,14 @@
-.content{
+.content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.content__filme {
+.content__filme,
+.content-elenco {
   display: flex;
   margin: 5% 20%;
 }
-
 
 .filme__img {
   margin: 20px;
@@ -43,4 +44,30 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 10% 0;
+}
+
+.content-elenco {
+  background-color: var( --lm-text);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content-elenco__title {
+  color: var(--bg-content);
+  padding: 10px;
+  margin-left: 40px
+}
+
+.content__actors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card__elenco {
+  margin: 10px;
+}
+.elenco__imagem {
+  width: 150px;
+  height: 225px;
 }
