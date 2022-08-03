@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardFilmeComponent } from './components/card-filme/card-filme.component';
 import { ListFilmesComponent } from './components/list-filmes/list-filmes.component';
+import { FilmeDetalhesComponent } from './components/filme-detalhes/filme-detalhes.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ListFilmesComponent } from './components/list-filmes/list-filmes.compon
     HomeComponent,
     HeaderComponent,
     CardFilmeComponent,
-    ListFilmesComponent
+    ListFilmesComponent,
+    FilmeDetalhesComponent
   ],
   imports: [
     BrowserModule,

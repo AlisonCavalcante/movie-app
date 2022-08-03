@@ -1,0 +1,13 @@
+.content{
+  display: flex;
+  justify-content: center;
+}
+
+.content__filme {
+  display: flex;
+  margin: 5% 20%;
+}
+
+.filme__img {
+  margin: 20px;
+}

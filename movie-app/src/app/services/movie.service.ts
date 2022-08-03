@@ -15,4 +15,8 @@ export class MovieService {
     return this.http.get<any>(Constantes.URL_BASE + 'upcoming?api_key=' + Constantes.API_KEY + `&page=${page}`);
   }
 
+  getMovie(id: number): Observable<any>{
+    return this.http.get<any>(Constantes.URL_BASE + `${id}?api_key=${Constantes.API_KEY}&language=en-US`);
+  }
+
 }

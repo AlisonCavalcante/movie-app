@@ -6,6 +6,11 @@
   height: 100px;
 }
 
+.navbar__logo {
+  text-decoration: none;
+  color: white;
+}
+
 .navbar  div {
   display: flex;
   justify-content: center;
