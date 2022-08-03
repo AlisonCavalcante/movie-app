@@ -1,15 +1,39 @@
 <section class="content">
   <div class="content__filme">
     <div class="filme__img">
-      <img src="https://image.tmdb.org/t/p/w300{{movie?.poster_path}}" alt="">
+      <img
+        src="https://image.tmdb.org/t/p/w300{{ movie?.poster_path }}"
+        alt=""
+      />
     </div>
     <div>
-      <h1>{{movie?.original_title}}</h1>
-      <div>
-        <p>{{movie?.overview}}</p>
+      <div class="filme__content-title">
+        <h1>{{ movie?.original_title }}</h1>
+        <span class="filme__vote-average">{{ movie?.vote_average }}</span>
       </div>
       <div>
+        <p>{{ movie?.overview }}</p>
+      </div>
+      <div class="filme__genres">
+        <h4>Genres</h4>
+        <span *ngFor="let m of movie?.genres">
+          {{ m.name }}
+        </span>
+      </div>
+      <div>
+        <span>Director</span>
         <span></span>
+      </div>
+      <div class="filme__statistics">
+        <div>
+          <span>Release Date: {{ movie?.release_date | date }}</span>
+        </div>
+        <div>
+          <span>Duration {{ movie?.runtime | runtime }}</span>
+        </div>
+        <div>
+          <span>Budget: {{ movie?.budget | currency }}</span>
+        </div>
       </div>
     </div>
   </div>

@@ -8,6 +8,39 @@
   margin: 5% 20%;
 }
 
+
 .filme__img {
   margin: 20px;
+}
+
+.filme__content-title {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filme__vote-average {
+  font-size: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid #28a745;
+  padding: 10px;
+  width: 55px;
+}
+
+.filme__genres {
+  margin: 5% 0;
+}
+
+.filme__genres span {
+  background-color: #ffc107;
+  padding: 5px;
+  margin: 0 10px 0 0;
+  border-radius: 5px;
+}
+
+.filme__statistics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10% 0;
 }

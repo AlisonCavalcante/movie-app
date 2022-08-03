@@ -19,4 +19,9 @@ export class MovieService {
     return this.http.get<any>(Constantes.URL_BASE + `${id}?api_key=${Constantes.API_KEY}&language=en-US`);
   }
 
+  getGenres(): Observable<any>{
+    return this.http.get<any>(Constantes.URL_GENRES + `${Constantes.API_KEY}`)
+  }
+
+
 }
