@@ -29,7 +29,7 @@
           <span>Release Date: {{ movie?.release_date | date }}</span>
         </div>
         <div>
-          <span>Duration {{ movie?.runtime | runtime }}</span>
+          <span>Duration: {{ movie?.runtime | runtime }}</span>
         </div>
         <div>
           <span>Budget: {{ movie?.budget | currency }}</span>
@@ -38,14 +38,26 @@
     </div>
   </div>
   <section class="content-elenco">
+    <div class="elenco__header">
       <h2 class="content-elenco__title">Actors</h2>
-      <div class="content__actors">
-        <div *ngFor="let actor of elenco" class="card__elenco">
-          <img class="elenco__imagem" src="https://image.tmdb.org/t/p/w300{{actor?.profile_path}}" alt="">
-          <div class="elenco__body">
-            <h4>{{actor?.name}}</h4>
-          </div>
+      <button class="elenco__header-button" (click)="showAll()">Show all</button>
+    </div>
+    <div class="content__actors">
+      <div *ngFor="let actor of elencoParcial" class="card__elenco">
+        <img
+          *ngIf="actor?.profile_path"
+          class="elenco__imagem"
+          src="https://image.tmdb.org/t/p/w300{{ actor?.profile_path }}"
+          alt=""
+        />
+        <div class="elenco__no--imagem" *ngIf="!actor?.profile_path">
+          <h4>No Photo</h4>
+        </div>
+        <div class="elenco__body">
+          <h4>{{ actor?.name }}</h4>
+          <h3>{{actor?.character}}</h3>
         </div>
       </div>
+    </div>
   </section>
 </section>

@@ -12,8 +12,9 @@ export class FilmeDetalhesComponent implements OnInit {
 
   idFilme!: number;
   movie: any;
-  elenco!: Elenco[];
-
+  elencoTotal!: Elenco[];
+  elencoParcial!: Elenco[];
+  isShowAllElenco: boolean = false;
   constructor(private activeRouter: ActivatedRoute, private movieService: MovieService) { }
 
   ngOnInit(): void {
@@ -30,9 +31,18 @@ export class FilmeDetalhesComponent implements OnInit {
 
   getElenco(id: number) {
     this.movieService.getCredits(id).subscribe(res => {
-      this.elenco = res.cast;
-      console.log(this.elenco);
+      this.elencoTotal = res.cast;
+      this.elencoParcial = res.cast.slice(0,5);
     });
+  }
+
+  showAll() {
+    this.isShowAllElenco = !this.isShowAllElenco;
+    if(this.isShowAllElenco) {
+      this.elencoParcial = this.elencoTotal;
+    } else {
+      this.elencoParcial = this.elencoTotal.slice(0,5);
+    }
   }
 
 }
