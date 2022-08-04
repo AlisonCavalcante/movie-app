@@ -40,7 +40,7 @@
   <section class="content-elenco">
     <div class="elenco__header">
       <h2 class="content-elenco__title">Actors</h2>
-      <button class="elenco__header-button" (click)="showAll()">Show all</button>
+      <button class="elenco__header-button" (click)="showAll(1)">Show all</button>
     </div>
     <div class="content__actors">
       <div *ngFor="let actor of elencoParcial" class="card__elenco">
@@ -56,6 +56,23 @@
         <div class="elenco__body">
           <h4>{{ actor?.name }}</h4>
           <h3>{{actor?.character}}</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content-recommendations">
+    <div class="recommendations__header">
+      <h2 class="recommendations__title">Recommendatios</h2>
+      <button class="elenco__header-button" (click)="showAll(2)">Show all</button>
+    </div>
+    <div class="content__card-recommendations">
+      <div class="card__recommendations" *ngFor="let recommend of recommendationsParcial">
+        <img  *ngIf="recommend?.poster_path" class="recommendations__image" src="https://image.tmdb.org/t/p/w300{{ recommend?.poster_path }}" alt="">
+        <div class="recommendations__no--imagem" *ngIf="!recommend?.poster_path">
+          <h4>No Photo</h4>
+        </div>
+        <div class="card-recommendations__body">
+          <h4>{{recommend?.original_title}}</h4>
         </div>
       </div>
     </div>

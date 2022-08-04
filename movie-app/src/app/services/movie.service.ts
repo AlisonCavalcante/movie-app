@@ -2,7 +2,7 @@ import { IMovie } from './../shared/models/Movie';
 import { Constantes } from './../shared/Constantes';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -34,4 +34,11 @@ export class MovieService {
       Constantes.URL_BASE + `${id}/credits?api_key=${Constantes.API_KEY}&language=en-US`
     );
   }
+
+  getRecommendations(id: number): Observable<any> {
+    return this.http.get(`${Constantes.URL_BASE}${id}/recommendations?api_key=${Constantes.API_KEY}&language=null&page=1`).pipe(
+      take(1)
+    )
+  }
+
 }

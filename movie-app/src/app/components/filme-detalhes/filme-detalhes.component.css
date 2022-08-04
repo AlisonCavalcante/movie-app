@@ -5,7 +5,8 @@
 }
 
 .content__filme,
-.content-elenco {
+.content-elenco,
+.content-recommendations {
   display: flex;
   margin: 1% 20%;
 }
@@ -52,7 +53,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.elenco__header {
+.elenco__header, .recommendations__header {
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -68,7 +69,8 @@
   font-size: 1.2rem;
 }
 
-.content-elenco__title {
+.content-elenco__title,
+.recommendations__title {
   color: var(--bg-content);
   padding: 10px;
   margin-left: 40px;
@@ -80,24 +82,37 @@
   justify-content: center;
 }
 
-.card__elenco {
+.card__elenco,
+.card__recommendations {
   background-color: rgba(0, 0, 0, 0.2);
   margin: 10px;
   max-width: 150px;
   text-align: center;
 }
+
+.card__recommendations {
+  background-color: #000;
+}
+
 .elenco__imagem,
-.elenco__no--imagem {
+.elenco__no--imagem,
+.recommendations__image,
+.recommendations__no--imagem {
   width: 150px;
   height: 225px;
 }
 
-.elenco__no--imagem {
+.elenco__no--imagem,
+.recommendations__no--imagem {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.2);
   color: var(--bg-content);
   display: flex;
   justify-content: center;
+}
+
+.recommendations__no--imagem {
+  color: var(--lm-text);
 }
 
 .elenco__no--imagem h4 {
@@ -107,4 +122,19 @@
 .elenco__body {
   color: var(--bg-content);
   padding: 10px;
+}
+
+.content-recommendations {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: var(--lm-text);
+}
+
+.content__card-recommendations {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }

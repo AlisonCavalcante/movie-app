@@ -1,3 +1,4 @@
+import { IMovie } from './../../shared/models/Movie';
 import { Elenco } from './../../shared/models/Elenco';
 import { MovieService } from './../../services/movie.service';
 import { Component, OnInit } from '@angular/core';
@@ -14,13 +15,18 @@ export class FilmeDetalhesComponent implements OnInit {
   movie: any;
   elencoTotal!: Elenco[];
   elencoParcial!: Elenco[];
+  recommendations!: IMovie[];
+  recommendationsParcial!: IMovie[];
   isShowAllElenco: boolean = false;
+  isShowRecommendations: boolean = false;
+
   constructor(private activeRouter: ActivatedRoute, private movieService: MovieService) { }
 
   ngOnInit(): void {
    this.idFilme = this.activeRouter.snapshot.params['id'];
    this.getMovie(this.idFilme);
    this.getElenco(this.idFilme);
+   this.getRecommendations(this.idFilme);
   }
 
   getMovie(id: number){
@@ -36,12 +42,25 @@ export class FilmeDetalhesComponent implements OnInit {
     });
   }
 
-  showAll() {
+  getRecommendations(id: number) {
+    this.movieService.getRecommendations(id).subscribe(res => {
+      this.recommendations = res.results;
+      this.recommendationsParcial = res.results.slice(0,5);
+    });
+  }
+
+  showAll(show: number) {
     this.isShowAllElenco = !this.isShowAllElenco;
-    if(this.isShowAllElenco) {
+    this.isShowRecommendations = !this.isShowRecommendations;
+    if(this.isShowAllElenco && show == 1) {
       this.elencoParcial = this.elencoTotal;
     } else {
       this.elencoParcial = this.elencoTotal.slice(0,5);
+    }
+    if(this.isShowRecommendations && show == 2) {
+      this.recommendationsParcial = this.recommendations;
+    } else {
+      this.recommendationsParcial = this.recommendations.slice(0,5);
     }
   }
 
