@@ -53,7 +53,8 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.elenco__header, .recommendations__header {
+.elenco__header,
+.recommendations__header {
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -92,13 +93,21 @@
 
 .card__recommendations {
   background-color: #000;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  max-width: 200px;
+  width: 100%;
 }
 
 .elenco__imagem,
-.elenco__no--imagem,
+.elenco__no--imagem {
+  width: 150px;
+  height: 225px;
+}
+
 .recommendations__image,
 .recommendations__no--imagem {
-  width: 150px;
+  width: 100%;
   height: 225px;
 }
 
@@ -124,6 +133,7 @@
   padding: 10px;
 }
 
+
 .content-recommendations {
   display: flex;
   flex-direction: row;
@@ -137,4 +147,28 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+}
+
+.card-recommendations__body {
+  color:  #f6f8ff;
+}
+
+.card__recommendations:hover {
+  transform: scale(1.1);
+}
+
+
+@media (max-width:783px) {
+  .content__filme {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 539px) {
+  .filme__img {
+    width: auto;
+  }
+  .filme__img img {
+    width: 100%;
+  }
 }

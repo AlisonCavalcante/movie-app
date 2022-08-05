@@ -24,6 +24,14 @@ export class FilmeDetalhesComponent implements OnInit {
 
   ngOnInit(): void {
    this.idFilme = this.activeRouter.snapshot.params['id'];
+   this.activeRouter.params.subscribe(params => {
+    let idTemporario;
+    idTemporario = params['id'];
+    if(this.idFilme != idTemporario) {
+      this.idFilme = idTemporario;
+      window.location.reload();
+    }
+   })
    this.getMovie(this.idFilme);
    this.getElenco(this.idFilme);
    this.getRecommendations(this.idFilme);

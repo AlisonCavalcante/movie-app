@@ -65,8 +65,8 @@
       <h2 class="recommendations__title">Recommendatios</h2>
       <button class="elenco__header-button" (click)="showAll(2)">Show all</button>
     </div>
-    <div class="content__card-recommendations">
-      <div class="card__recommendations" *ngFor="let recommend of recommendationsParcial">
+    <div  class="content__card-recommendations">
+      <div [routerLink]="['/filme-detalhe', recommend.id]" class="card__recommendations" *ngFor="let recommend of recommendationsParcial">
         <img  *ngIf="recommend?.poster_path" class="recommendations__image" src="https://image.tmdb.org/t/p/w300{{ recommend?.poster_path }}" alt="">
         <div class="recommendations__no--imagem" *ngIf="!recommend?.poster_path">
           <h4>No Photo</h4>
